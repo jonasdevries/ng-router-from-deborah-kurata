@@ -13,6 +13,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {MovieData} from "./movies/movie-data";
 import {MovieDetailComponent} from './movies/movie-detail.component';
+import { MovieEditComponent } from './movies/edit/movie-edit.component';
+import { MovieEditInfoComponent } from './movies/edit/movie-edit-info.component';
+import {FormsModule} from "@angular/forms";
+import { MovieEditTagsComponent } from './movies/edit/movie-edit-tags.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import {MovieDetailComponent} from './movies/movie-detail.component';
     LoginComponent,
     PageNotFoundComponent,
     ShellComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    MovieEditComponent,
+    MovieEditInfoComponent,
+    MovieEditTagsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MovieData, { delay: 1000, dataEncapsulation: false }),
+    HttpClientInMemoryWebApiModule.forRoot(MovieData, { delay: 3000, dataEncapsulation: false }),
     AppRoutingModule
   ],
   providers: [],
